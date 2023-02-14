@@ -1,74 +1,64 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-struct edge
+void calLPS(string p, int* LPS, int plen)
 {
-    int source, dest;
-    float wt;
-};
+    LPS[0] = 0;
+    int i = 0, j = 1;
+    
+    while(j<plen)
+    {
+        if(p.at(i) == p.at(j))
+        {
+            LPS[j] = i+1;
+            i++; j++;
+        }
+        else
+        {
+            if(i==0)
+            {
+                LPS[j] = i;
+                j++;
+            }
+            else
+            {
+                i = LPS[i-1];
+            }
+        }
+    }
+}
 
 int main()
 {
-    int vert, e;
-    cout << "Enter the no. of vertices and edges: ";
-    cin >> vert >> e;
+    string s = "abababaab";
+    string p = "aba";
     
-    struct edge edges[e];
+    int slen = s.length();
+    int plen = p.length();
+ 
+    int LPS[plen];
+    int i = 0, j = 0;
+    calLPS(p, LPS, plen);
     
-    for(int i = 0; i<e; i++)
+    while(i < slen)
     {
-        cout << "Enter the value of source, destination and weight of edge " << i+1 << " : ";
-        cin >> edges[i].source >> edges[i].dest >> edges[i].wt;
-    }
-    
-    float dist[vert];
-    
-    int start;
-    cout << "Enter the starting node: ";
-    cin >> start;
-    
-    for(int i = 0; i<vert; i++)
-        dist[i] = INT_MAX;
-    
-    dist[start-1] = 0;
-    
-    for(int i = 0; i<vert-1; i++)
-    {
-        for(int j = 0; j<e; j++)
+        if (p.at(j) == s.at(i))
         {
-            int u = edges[j].source;
-            int v = edges[j].dest;
-            int w = edges[j].wt;
-            
-            if(dist[v-1] > dist[u-1] + w)
-                dist[v-1] = dist[u-1] + w;
+            i++; j++;
+        }
+        if (j == plen)
+        {
+            cout << "Pattern matched at " << i - plen << endl;
+            j = LPS[j-1];
+        }
+        else if (i < slen && p.at(j) != s.at(i))
+        {
+            if(j==0)
+                i++;
+            else
+                j = LPS[j-1];
         }
     }
-    
-    int flag = 0;
-    
-    for(int i = 0; i<e; i++)
-    {
-        int u = edges[i].source;
-        int v = edges[i].dest;
-        int w = edges[i].wt;
-        
-        if(dist[v-1] > dist[u-1] + w)
-        {
-            flag = 1;
-            break;
-        }
-    }
-    
-    if(flag == 0)
-    {
-        for(int i = 0; i<vert; i++)
-        {
-            cout << dist[i] << " - " << i << endl;
-        }
-    }
-    else
-        cout << "No Solution";
     
     return 0;
 }

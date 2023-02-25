@@ -39,7 +39,7 @@ void change(Item a[], int n, int cap)
         {
             amt += a[i].w;
             cap -= a[i].val;
-            cout << amt << " " << cap << endl;
+            // cout << amt << " " << cap << endl;
         }
         else
         {

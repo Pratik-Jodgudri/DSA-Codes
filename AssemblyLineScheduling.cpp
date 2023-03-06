@@ -12,7 +12,9 @@ int main()
     int dp[2][n], path[2][n];
 
     dp[0][0] = a[0][0] + e[0];
+    path[0][0] = 0;
     dp[1][0] = a[1][0] + e[1];
+    path[1][0] = 1;
 
     for (int j = 1; j < n; j++)
     {
@@ -45,39 +47,43 @@ int main()
         }
     }
 
-    int last;
+    int last, min;
 
     int first = dp[0][n-1] + x[0];
     int second = dp[1][n-1] + x[1];
 
     if(first <= second)
-    {
+    {   
+        min = first;
         last = 0;
     }
     else
     {
+        min = second;
         last = 1;
     }
     
-    for(int i = 0; i<2; i++)
-    {
-        for(int j = 0; j<n; j++)
-        {
-            cout << dp[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << "min: " << min << endl;
 
-    for(int i = 0; i<2; i++)
-    {
-        for(int j = 0; j<n; j++)
-        {
-            cout << path[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for(int i = 0; i<2; i++)
+    // {
+    //     for(int j = 0; j<n; j++)
+    //     {
+    //         cout << dp[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
-    cout << (first<=second?first:second) << endl;
+    // for(int i = 0; i<2; i++)
+    // {
+    //     for(int j = 0; j<n; j++)
+    //     {
+    //         cout << path[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    // cout << (first<=second?first:second) << endl;
 
     int i = last;
     cout << "Exit must be reached from station: " << i << endl;

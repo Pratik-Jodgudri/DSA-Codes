@@ -3,7 +3,9 @@ using namespace std;
 
 int main()
 {
-    string s1 = "speedy", s2 = "steady";
+    string s1, s2; // = "speedy", s2 = "steady";
+    cout << "Enter the two strings: " << endl;
+    cin >> s1 >> s2;
     int m = s1.length();
     int n = s2.length();
 
@@ -59,7 +61,7 @@ int main()
             j--;
     }
 
-    cout << ans;
+    cout << "The Longest Common Subsequence is: " << ans;
 
     // for(int i = 0; i<m+1; i++)
     // {

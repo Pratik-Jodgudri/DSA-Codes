@@ -3,12 +3,34 @@ using namespace std;
 
 int main()
 {
-    int a[2][4] = {{4, 5, 3, 2}, {2, 10, 1, 4}};
-    int t[2][3] = {{7, 4, 5}, {9, 2, 8}};
-    int e[2] = {10, 12};
-    int x[2] = {18, 7};
+    int n; // = 4;
+    cout << "Enter the no. of nodes: ";
+    cin >> n;
+    int a[2][n]; //= {{4, 5, 3, 2}, {2, 10, 1, 4}};
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cout << "Enter the element at a[" << i << "][" << j << "]: ";
+            cin >> a[i][j];
+        }
+    }
+    int t[2][n-1]; //= {{7, 4, 5}, {9, 2, 8}};
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < n-1; j++)
+        {
+            cout << "Enter the element at t[" << i << "][" << j << "]: ";
+            cin >> t[i][j];
+        }
+    }
+    int e[2]; //= {10, 12};
+    cout << "Enter the two entry values: ";
+    cin >> e[0] >> e[1];
+    int x[2]; //= {18, 7};
+    cout << "Enter the two exit values: ";
+    cin >> x[0] >> x[1];
 
-    int n = 4;
     int dp[2][n], path[2][n];
 
     dp[0][0] = a[0][0] + e[0];

@@ -83,6 +83,7 @@ void print()
 
 int main()
 {
+    cout << "Enter the number of queens 'n' to place in (nxn) matrix: \n";
     cin >> n;
     
     solve(0);   

@@ -3,8 +3,14 @@ using namespace std;
 
 int main()
 {
-    int r[] = {13, 5, 89, 3, 34};
-    int n = 4;
+    int n;
+    cout << "Enter the no. of matrices: ";
+    cin >> n;
+    int r[n+1]; // = {13, 5, 89, 3, 34};
+    cout << "Enter the values of the 'r' array: \n";
+    for(int i = 0; i < n+1; i++)
+        cin >> r[i];
+    // int n = 4;
     int dp[n][n];
 
     for (int i = 0; i < n; i++)
@@ -43,6 +49,7 @@ int main()
     //     cout << endl;
     // }
     
+    cout << "Minimum no. of multiplications required to multiply the matrices is: \n";
     cout << dp[0][n-1];
 
     return 0;

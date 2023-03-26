@@ -7,6 +7,7 @@ bool found = false;
 
 void print()
 {
+    cout << "Subset: ";
     stack <int> temp;
     
     while(!stck.empty())
@@ -50,9 +51,11 @@ void solve(int arr[], int n, int ind, int sum, int tar)
 int main()
 {
     int n;
+    cout << "Enter the number of elements in the Set: ";
     cin >> n;
 
     int arr[n];
+    cout << "Enter the elements of the Set: \n";
     for(int i = 0; i<n; i++)
     {
         cin >> arr[i];
@@ -60,6 +63,7 @@ int main()
 
     int tar, sum;
     sum =  0;
+    cout << "Enter the target value: ";
     cin >> tar;
 
     solve(arr, n, 0, sum, tar);

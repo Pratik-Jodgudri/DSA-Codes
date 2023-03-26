@@ -3,7 +3,8 @@ using namespace std;
 
 typedef struct node
 {
-    int w, val;
+    int w; 
+    float val;
     float ratio;
 }Item;
 
@@ -37,8 +38,8 @@ void change(Item a[], int n, int cap)
     {
         if(a[i].val <= cap)
         {
-            amt += a[i].w;
-            cap -= a[i].val;
+            amt += a[i].val;
+            cap -= a[i].w;
             // cout << amt << " " << cap << endl;
         }
         else
@@ -47,20 +48,31 @@ void change(Item a[], int n, int cap)
             break;
         }
     }
-    cout << amt;
+    cout << "The maximum amount: " << amt << endl;
 }
 
 int main()
 {
     int n, cap;
-    cin >> n >> cap;
+    cout << "Enter the number of items: ";
+    cin >> n;
+    cout << "Enter the capacity: ";
+    cin >> cap;
     Item a[n];
     for(int i = 0; i<n; i++)
     {
-        cin >> a[i].w >> a[i].val;
+        cout << "Enter the weight of Item " << i+1 << ": ";
+        cin >> a[i].w;
+        cout << "Enter the value of Item " << i+1 << ": ";
+        cin >> a[i].val;
     }
 
     init(a, n);
+    // for(int i = 0; i<n; i++)
+    // {
+    //     cout << a[i].w << " ";
+    // }
+    // cout << endl;
     change(a, n, cap);
     return 0;
 }

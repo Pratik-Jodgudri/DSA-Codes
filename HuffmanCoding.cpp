@@ -63,10 +63,21 @@ void printcode(Node *root, string s)
 
 int main()
 {
-    char a[] = {'a', 'b', 'c', 'd', 'e', 'f'};
-    int f[] = {5, 9, 12, 13, 16, 45};
-    int n = 6;
+    int n; // = 6
+    cout << "Enter the no. of different characters: ";
+    cin >> n;
+    char a[n];  // = {'a', 'b', 'c', 'd', 'e', 'f'};
+    int f[n]; // = {5, 9, 12, 13, 16, 45};
     
+    for(int i = 0; i < n; i++)
+    {
+        cout << "Enter the character " << i+1 << ": ";
+        cin >> a[i];
+        cout << "Enter frequency of character " << i+1 << ": ";
+        cin >> f[i];
+    }
+
+    cout << "The Huffman codes are: " << endl;   
     Huff(a, f, n);
 
     return 0;

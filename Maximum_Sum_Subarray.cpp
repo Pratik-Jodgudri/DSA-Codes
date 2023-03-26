@@ -41,10 +41,18 @@ int maxsum(int *arr, int l, int h)
 
 int main()
 {
-    int arr[] = {3, -1, -1, 10, -3, -2, 4};
-    int n = 7;
-
-    cout << maxsum(arr, 0, n-1) << endl;
+    int n; // = 7;
+    cout << "Enter the no. of elements in the array: ";
+    cin >> n;
+    
+    int arr[n]; // = {3, -1, -1, 10, -3, -2, 4};
+    cout << "Enter the elements of the array: \n";
+    for(int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    cout << "The maximum Sum of subarray is: " << maxsum(arr, 0, n-1) << endl;
 
     return 0;
 }

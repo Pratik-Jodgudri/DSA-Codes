@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define n 5
-int adj[n][n] = {
-    {0, 1, 1, 0, 0},
-    {1, 0, 1, 0, 1},
-    {1, 1, 0, 1, 1},
-    {0, 0, 1, 0, 1},
-    {0, 1, 1, 1, 0}};
+int n;
+int adj[20][20]; // = {
+//     {0, 1, 1, 0, 0},
+//     {1, 0, 1, 0, 1},
+//     {1, 1, 0, 1, 1},
+//     {0, 0, 1, 0, 1},
+//     {0, 1, 1, 1, 0}};
 
-int color[n];
-int m = 3;
+int color[20];
+int m;
 
 bool issafe(int v, int c)
 {
@@ -49,6 +49,21 @@ void print()
 
 int main()
 {
+    cout << "Enter the number of vertices: ";
+    cin >> n;
+    
+    cout << "Enter the elements in the adjacency matrix: \n";
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cout << "[" << i << "][" << j << "]: ";
+            cin >> adj[i][j];
+        }
+    }
+
+    cout << "Enter the number of colors: ";
+    cin >> m;
     for (int i = 0; i < n; i++)
         color[i] = 0;
 

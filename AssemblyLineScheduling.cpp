@@ -91,7 +91,7 @@ int main()
     for(int j = n-1; j > 0; j--)
     {
         i = path[i][j];
-        cout << "Station " << j << " should be reached from assemply line " << i << endl;
+        cout << "Station " << j << " should be reached from assembly line " << i << endl;
     }
     
     return 0;

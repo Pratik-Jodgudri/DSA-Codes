@@ -18,7 +18,7 @@ void init(Item a[], int n)
     for(int i = 0; i < n-1; i++)
     {
         int max = i;
-        for(int j = i; j < n; j++)
+        for(int j = i + 1; j < n; j++)
         {
             if(a[j].ratio > a[max].ratio)
                 max = j;
@@ -36,7 +36,7 @@ void change(Item a[], int n, int cap)
 
     for(int i = 0; i<n; i++)
     {
-        if(a[i].val <= cap)
+        if(a[i].w <= cap)
         {
             amt += a[i].val;
             cap -= a[i].w;

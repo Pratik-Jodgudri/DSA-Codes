@@ -22,6 +22,7 @@ int main()
         cout << "Enter the value of Item " << i+1 << ": ";
         cin >> val[i]; 
     }
+
     int dp[n + 1][cap + 1];
     
     for (int i = 0; i < n + 1; i++)

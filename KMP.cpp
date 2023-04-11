@@ -30,8 +30,12 @@ void calLPS(string p, int* LPS, int plen)
 
 int main()
 {
-    string s = "abababaab";
-    string p = "aba";
+    string s; // = "abababaab";
+    string p; // = "aba";
+    cout << "Enter the string: ";
+    cin >> s;
+    cout << "Enter the pattern to match: ";
+    cin >> p;
     
     int slen = s.length();
     int plen = p.length();

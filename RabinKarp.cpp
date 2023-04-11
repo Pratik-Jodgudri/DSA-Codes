@@ -6,8 +6,13 @@ using namespace std;
 int main()
 {
     string s, p;
-    s = "ABCCDDAEFGCDDF";
-    p = "CDD";
+    // s = "ABCCDDAEFGCDDF";
+    // p = "CDD";
+    cout << "Enter the string: ";
+    cin >> s;
+    cout << "Enter the pattern to match: ";
+    cin >> p;
+
     int slen = s.length();
     int plen = p.length();
 

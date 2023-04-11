@@ -10,7 +10,7 @@ struct edge
 int main()
 {
     int vert, e;
-    cout << "Enter the no. of vertices and edges: ";
+    cout << "Enter the no. of vertices and edges: \n";
     cin >> vert >> e;
     
     struct edge edges[e];
@@ -62,9 +62,10 @@ int main()
     
     if(flag == 0)
     {
+        cout << "Node      Distance" << endl;
         for(int i = 0; i<vert; i++)
         {
-            cout << dist[i] << " - " << i << endl;
+            cout << " " << i << "    -     " << dist[i] << endl;
         }
     }
     else

@@ -8,13 +8,19 @@ void quick(int a[], int left, int right);
 int main()
 {
     int a[20], n, i;
+    cout << "Enter the number of elements in the array: ";
     cin >> n;
+
+    cout << "Enter the elements of the array: \n";
     for (i = 0; i < n; i++)
         cin >> a[i];
+
     quick(a, 0, n - 1);
+
     cout << "sorted array is \n";
     for (i = 0; i < n; i++)
         cout << a[i] << " ";
+
     return 0;
 }
 

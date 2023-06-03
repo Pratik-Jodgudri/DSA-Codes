@@ -58,12 +58,19 @@ void convexHull(Point points[], int n)
 int main()
 {
     int n;
-    cout << "enter the number of points\n";
+    cout << "Enter the number of points: ";
     cin >> n;
-    Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}, {3, 3}};
+    
+    Point points[n]; // = {{0, 3}, {2, 2}, {1, 1}, {2, 1}, {3, 0}, {0, 0}, {3, 3}};
+    cout << "Enter the coordinates of the points: \n";
+    for(int i = 0; i < n; i++)
+    {
+        cout << "Point " << i+1 << ": ";
+        cin >> points[i].x >> points[i].y;
+    }
     cout << "The points in the convex hull are: ";
-
     convexHull(points, n);
+
     return 0;
 }
   

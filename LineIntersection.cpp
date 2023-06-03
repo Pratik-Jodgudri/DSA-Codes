@@ -73,14 +73,15 @@ bool intersect(struct P P1, struct P P2, struct P P3, struct P P4)
 int main()
 {
     struct P P1, P2, P3, P4;
-    P1.x = 8;
-    P1.y = 8;
-    P2.x = 1;
-    P2.y = 1;
-    P3.x = 1;
-    P3.y = 4;
-    P4.x = 7;
-    P4.y = 1;
+    cout << "Enter the coordinates of the points P1, P2, P3, P4: \n";
+    cin >> P1.x; // = 8;
+    cin >> P1.y; // = 8;
+    cin >> P2.x; // = 1;
+    cin >> P2.y; // = 1;
+    cin >> P3.x; // = 1;
+    cin >> P3.y; // = 4;
+    cin >> P4.x; // = 7;
+    cin >> P4.y; // = 1;
 
     if(intersect(P1, P2, P3, P4))
         cout << "They Intersect\n";

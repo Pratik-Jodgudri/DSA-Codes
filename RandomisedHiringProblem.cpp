@@ -11,10 +11,16 @@ struct candidate
 int main()
 {
     int n, no_hired = 0;
-    n = 8;
+    cout << "Enter the number of candidates: ";
+    cin >> n; // = 8;
 
     // only the ranks of the various candidates are given as input
-    struct candidate cand[] = {{6}, {4}, {12}, {11}, {13}, {10}, {15}, {8}};
+    struct candidate cand[n]; // = {{6}, {4}, {12}, {11}, {13}, {10}, {15}, {8}};
+    cout << "Enter the ranks of candidates: \n";
+    for(int i = 0; i < n; i++)
+    {
+        cin >> cand[i].rank;
+    }
     // as per the input array, candidate at index 6 has the highest rank
 
     // below code is for taking inputs from the user
@@ -52,8 +58,8 @@ int main()
         }
     }
 
-    cout << "nr of hired candidates is " << no_hired << "\n";
-    cout << "best candidate index and rank " << best << ", " << cand[best].rank;
+    cout << "No. of hired candidates is: " << no_hired << "\n";
+    cout << "Best candidate index and rank: " << best << ", " << cand[best].rank;
 
     return 0;
 }

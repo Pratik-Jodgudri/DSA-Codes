@@ -5,6 +5,12 @@ int main()
 {
     int n; 
     cin >> n;
+
+    if (n == 0) {
+        cout << "Input array is empty." << endl;
+        return 0;
+    }
+
     int a[n]; // 1 2 3 4 5 
     for(int i = 0; i < n; i++)   
     {
